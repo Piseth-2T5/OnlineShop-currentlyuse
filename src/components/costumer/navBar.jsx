@@ -1,28 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AddminDashboard from "./adminDashboard";
-class Nav extends React.Component {
+
+class NavBar extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
 				<div className="nav-bar ">
 					<nav className="navbar navbar-expand-lg navbar-light bg-light bg-dark">
-						<Link className="navbar-brand text-light" to="/">
+						<a className="navbar-brand text-light" href="#">
 							<i className="fas fa-award"></i> OnlineShope
-						</Link>
+						</a>
 						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
 						<div className="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul className="navbar-nav mr-auto ml-auto">
 								<li className="nav-item active">
-									<a className="nav-link text-light" href="#">
+									<Link className="nav-link text-light" to="/costumer-homepage">
 										Home
-									</a>
+									</Link>
 								</li>
 								<li className="nav-item">
 									<a className="nav-link text-light" href="#">
-										Account
+										Login
 									</a>
 								</li>
 								<li className="nav-item">
@@ -31,8 +31,13 @@ class Nav extends React.Component {
 									</a>
 								</li>
 								<li className="nav-item">
-									<Link className="nav-link text-light " to="/costumer-homepage">
-										<i className="fas fa-shopping-cart"></i> POS
+									<a className="nav-link text-light" href="#">
+										<i className="fas fa-shopping-cart"></i> Cart
+									</a>
+								</li>
+								<li className="nav-item">
+									<Link className="nav-link text-light" to="/">
+										Admin
 									</Link>
 								</li>
 							</ul>
@@ -50,4 +55,4 @@ class Nav extends React.Component {
 	}
 }
 
-export default Nav;
+export default NavBar;

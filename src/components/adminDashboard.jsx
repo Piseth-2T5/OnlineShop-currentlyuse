@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { Link, Route } from "react-router-dom";
 import "../style/adminDashBoard.css";
+import ListProduct from "./listProduct";
+
 class AddminDashboard extends React.Component {
 	state = {
 		isProductClicked: false,
@@ -19,7 +22,7 @@ class AddminDashboard extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<h4 className="p-2 dashboard pl-4 m-0">Inventory Management System</h4>
+				<h4 className="p-2 dashboard pl-4 m-0">{this.changeTitleToProduct()}</h4>
 				<div className="row">
 					<div className="col-2 p-0 bg-light " style={{ height: 700 }}>
 						<h4 className="dashboard m-0 text-center">FEATURES</h4>
@@ -30,10 +33,10 @@ class AddminDashboard extends React.Component {
 							</a>
 							<div className="collapse" id="collapse">
 								<nav className="nav flex-column">
-									<a className="nav-link active" href="#">
+									<Link className="nav-link active" to="/listProduct">
 										<i className="fas fa-list-alt"></i>
 										List Product
-									</a>
+									</Link>
 									<a className="nav-link" href="#">
 										<i className="fas fa-plus-circle"></i>
 										Add Product
@@ -86,41 +89,13 @@ class AddminDashboard extends React.Component {
 							</div>
 						</nav>
 					</div>
-					<div className="col-10 m-0 p-0">
-						<table className="table table-striped table-bordered">
-							<thead className="thead-dark">
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">First</th>
-									<th scope="col">Last</th>
-									<th scope="col">Handle</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<Route path="/listProduct" component={ListProduct}></Route>
 				</div>
 			</React.Fragment>
 		);
+	}
+	changeTitleToProduct() {
+		return this.state.isProductClicked ? "Product Management System" : "Inventory Management System";
 	}
 	changeProductColor() {
 		const { isProductClicked } = this.state;
