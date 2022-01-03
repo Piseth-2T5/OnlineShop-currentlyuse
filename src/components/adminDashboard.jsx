@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import "../style/adminDashBoard.css";
+import AddProduct from "./addProduct";
 import ListProduct from "./listProduct";
+import ListCostumer from "./listCostumer";
+import Sale from "./sale";
+import StokeCount from "./stokteCount";
+import Order from "./order";
+import Purchase from "./purchase";
 
 class AddminDashboard extends React.Component {
 	state = {
@@ -23,6 +29,14 @@ class AddminDashboard extends React.Component {
 		return (
 			<React.Fragment>
 				<h4 className="p-2 dashboard pl-4 m-0">{this.changeTitleToProduct()}</h4>
+				{/* <div className="row bg-warning">
+					<div className="col-9"></div>
+					<div className="col-3">
+						<a href="" className="btn btn-white text-dark">
+							Find
+						</a>
+					</div>
+				</div> */}
 				<div className="row">
 					<div className="col-2 p-0 bg-light " style={{ height: 700 }}>
 						<h4 className="dashboard m-0 text-center">FEATURES</h4>
@@ -33,18 +47,18 @@ class AddminDashboard extends React.Component {
 							</a>
 							<div className="collapse" id="collapse">
 								<nav className="nav flex-column">
-									<Link className="nav-link active" to="/listProduct">
+									<Link className="nav-link active" to="/listProducts">
 										<i className="fas fa-list-alt"></i>
 										List Product
 									</Link>
-									<a className="nav-link" href="#">
+									<Link className="nav-link" to="/addProduct">
 										<i className="fas fa-plus-circle"></i>
 										Add Product
-									</a>
-									<a className="nav-link" href="#">
+									</Link>
+									<Link className="nav-link" to="/stokeCount">
 										<i className="fas fa-store"></i>
 										Stoke Count
-									</a>
+									</Link>
 								</nav>
 							</div>
 						</nav>
@@ -55,18 +69,18 @@ class AddminDashboard extends React.Component {
 							</a>
 							<div className="collapse" id="collapseTransaction">
 								<nav className="nav flex-column">
-									<a className="nav-link active" href="#">
+									<Link className="nav-link active" to="/sales">
 										<i className="fas fa-hand-holding-usd"></i>
 										Sales
-									</a>
-									<a className="nav-link" href="#">
+									</Link>
+									<Link className="nav-link" to="/orders">
 										<i className="fas fa-pause-circle"></i>
 										Orders
-									</a>
-									<a className="nav-link" href="#">
+									</Link>
+									<Link className="nav-link" to="/purchases">
 										<i className="fas fa-shopping-cart"></i>
 										Purchases
-									</a>
+									</Link>
 								</nav>
 							</div>
 						</nav>
@@ -77,19 +91,25 @@ class AddminDashboard extends React.Component {
 							</a>
 							<div className="collapse" id="collapseCostumer">
 								<nav className="nav flex-column">
-									<a className="nav-link active" href="#">
+									<Link className="nav-link active" to="/costumers">
 										<i className="fas fa-list-alt"></i>
 										List Costumers
-									</a>
-									<a className="nav-link" href="#">
+									</Link>
+									{/* <a className="nav-link" href="#">
 										<i className="fas fa-plus-circle"></i>
 										Add Costumers
-									</a>
+		</a> */}
 								</nav>
 							</div>
 						</nav>
 					</div>
-					<Route path="/listProduct" component={ListProduct}></Route>
+					<Route path="/costumers" component={ListCostumer}></Route>
+					<Route path="/listProducts" component={ListProduct}></Route>
+					<Route path="/addProduct" component={AddProduct}></Route>
+					<Route path="/sales" component={Sale}></Route>
+					<Route path="/stokeCount" component={StokeCount}></Route>
+					<Route path="/orders" component={Order}></Route>
+					<Route path="/purchases" component={Purchase}></Route>
 				</div>
 			</React.Fragment>
 		);

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AddminDashboard from "./adminDashboard";
 class Nav extends React.Component {
 	render() {
 		return (
