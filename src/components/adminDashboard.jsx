@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import "../style/adminDashBoard.css";
 import AddProduct from "./addProduct";
 import ListProduct from "./listProduct";
@@ -8,6 +8,7 @@ import Sale from "./sale";
 import StokeCount from "./stokteCount";
 import Order from "./order";
 import Purchase from "./purchase";
+import FindProduct from "./findProduct";
 
 class AddminDashboard extends React.Component {
 	state = {
@@ -28,16 +29,8 @@ class AddminDashboard extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<h4 className="p-2 dashboard pl-4 m-0">{this.changeTitleToProduct()}</h4>
-				{/* <div className="row bg-warning">
-					<div className="col-9"></div>
-					<div className="col-3">
-						<a href="" className="btn btn-white text-dark">
-							Find
-						</a>
-					</div>
-				</div> */}
-				<div className="row">
+				{/* <h4 className="p-2 dashboard pl-4 m-0">{this.changeTitleToProduct()}</h4> */}
+				<div className="row w-100">
 					<div className="col-2 p-0 bg-light " style={{ height: 700 }}>
 						<h4 className="dashboard m-0 text-center">FEATURES</h4>
 						<nav className="nav flex-column pl-4 sidebar">
@@ -95,21 +88,43 @@ class AddminDashboard extends React.Component {
 										<i className="fas fa-list-alt"></i>
 										List Costumers
 									</Link>
-									{/* <a className="nav-link" href="#">
-										<i className="fas fa-plus-circle"></i>
-										Add Costumers
-		</a> */}
 								</nav>
 							</div>
 						</nav>
 					</div>
-					<Route path="/costumers" component={ListCostumer}></Route>
-					<Route path="/listProducts" component={ListProduct}></Route>
-					<Route path="/addProduct" component={AddProduct}></Route>
-					<Route path="/sales" component={Sale}></Route>
-					<Route path="/stokeCount" component={StokeCount}></Route>
-					<Route path="/orders" component={Order}></Route>
-					<Route path="/purchases" component={Purchase}></Route>
+					<div className="col-10 pl-3 left-side p-0">
+						<div className="row">
+							<div className="col p-0 ">
+								<ul className="list-group list-group-horizontal justify-content-center">
+									<li className="btn list-group-item ">
+										<i className="fas fa-home"></i>
+									</li>
+									{/* <Link to="/listProducts/findProducts"> */}
+									<li className="btn list-group-item ">
+										Find <i className="fas fa-search text-success"></i>
+									</li>
+									{/* </Link> */}
+									<li className="btn list-group-item ">
+										Remove <i className="fas fa-minus-square text-danger"></i>
+									</li>
+								</ul>
+							</div>
+							<Route path="/ListProducts/findProducts" component={FindProduct}></Route>
+						</div>
+						<div className="row ">
+							<div className="col-12 p-0">
+								<Switch>
+									<Route path="/costumers" component={ListCostumer}></Route>
+									<Route path="/listProducts" component={ListProduct}></Route>
+									<Route path="/addProduct" component={AddProduct}></Route>
+									<Route path="/sales" component={Sale}></Route>
+									<Route path="/stokeCount" component={StokeCount}></Route>
+									<Route path="/orders" component={Order}></Route>
+									<Route path="/purchases" component={Purchase}></Route>
+								</Switch>
+							</div>
+						</div>
+					</div>
 				</div>
 			</React.Fragment>
 		);

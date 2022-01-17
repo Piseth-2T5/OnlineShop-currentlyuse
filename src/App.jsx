@@ -6,13 +6,13 @@ import HomePage from "./components/costumer/homePage";
 class App extends React.Component {
 	render() {
 		return (
-			<main className="">
+			<div className="p-0 ">
 				<Switch>
 					<Route path="/costumer-homepage" component={HomePage}></Route>
 					<Route path="/costumer-product-view" component={Product}></Route>
 					<Route path="/" component={Home}></Route>
 				</Switch>
-			</main>
+			</div>
 		);
 	}
 }

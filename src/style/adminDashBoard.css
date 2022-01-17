@@ -2,18 +2,13 @@
 	color: white;
 	text-align: center;
 	/* border-top: 1px solid; */
-	padding: 10.5px;
+	padding: 10px;
 	background: rgb(46, 46, 46);
 }
 .nav {
 	font-size: 1.2rem;
 }
 .sidebar {
-	position: relative;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
 	color: black;
 	/* height: 700px; */
 	border-right: rgb(199, 199, 199) 1px solid;
@@ -28,4 +23,15 @@
 }
 .sign-location {
 	float: right;
+}
+.find-product {
+	height: 200px;
+	position: absolute;
+	top: 0;
+	right: 50%;
+	left: 0x;
+	bottom: 0;
+	border: 1px solid gray;
+	border-radius: 5px;
+	z-index: 100;
 }

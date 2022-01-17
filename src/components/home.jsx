@@ -4,10 +4,10 @@ import Nav from "./nav";
 class Home extends React.Component {
 	render() {
 		return (
-			<React.Fragment>
+			<div className="p-0">
 				<Nav />
 				<AddminDashboard />
-			</React.Fragment>
+			</div>
 		);
 	}
 }

@@ -4,7 +4,7 @@ class StokeCount extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div className="col-10 m-0 p-0">
+				<div className="m-0 p-0">
 					<table className="table table-striped table-bordered">
 						<thead className="thead-dark">
 							<tr>
