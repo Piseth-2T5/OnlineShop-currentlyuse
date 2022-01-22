@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 class Nav extends React.Component {
 	render() {
+		const menus = [
+			{ name: "Home", route: "/home" },
+			{ name: "Product", route: "/product" },
+			{ name: "Costumer", route: "/costumer" },
+			{ name: "Account", route: "/account" },
+		];
 		return (
 			<React.Fragment>
 				<div className="nav-bar ">
@@ -12,35 +18,16 @@ class Nav extends React.Component {
 						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
-						<div className="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul className="navbar-nav mr-auto ml-auto">
-								<li className="nav-item active">
-									<a className="nav-link text-light" href="#">
-										Home
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link text-light" href="#">
-										Account
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link text-light" href="#">
-										Order
-									</a>
-								</li>
-								<li className="nav-item">
-									<Link className="nav-link text-light " to="/costumer-homepage">
-										<i className="fas fa-shopping-cart"></i> POS
-									</Link>
-								</li>
+						<div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+							<ul className="navbar-nav pr-4">
+								{menus.map((menu) => (
+									<li className="nav-item " key={menu.name}>
+										<Link className="nav-link text-white" to={menu.route}>
+											{menu.name}
+										</Link>
+									</li>
+								))}
 							</ul>
-							<form className="form-inline my-2 my-lg-0">
-								<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-								<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-									<i className="fas fa-search"></i>
-								</button>
-							</form>
 						</div>
 					</nav>
 				</div>
