@@ -7,7 +7,7 @@ class ItemsControl extends Component {
 	render() {
 		const { clicked, items, itemsDisplay, onFilter, onDelete,onDisplayFilter } = this.props;
 		return (
-			<div className="row w-100 m-0">
+			<div className="col w-100 m-0">
 				{/* <div className="col"></div> */}
 				<div className="col text-right p-2">
 					<div className="">
@@ -29,7 +29,7 @@ class ItemsControl extends Component {
 							itemsDisplay={itemsDisplay}
 						/>
 						<input
-							className="p-2 btn text-left border border-dark mx-2"
+							className="p-2 btn text-left text-white border bg-white mx-2"
 							type="search"
 							placeholder="Search..."
 						/>

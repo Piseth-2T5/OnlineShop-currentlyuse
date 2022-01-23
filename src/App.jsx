@@ -5,7 +5,7 @@ import Main from "./components/main";
 class App extends React.Component {
 	render() {
 		return (
-			<div className="p-0 ">
+			<div className="p-0 w-100 ">
 				<Switch>
 					<Route path="/" component={Main}></Route>
 				</Switch>
