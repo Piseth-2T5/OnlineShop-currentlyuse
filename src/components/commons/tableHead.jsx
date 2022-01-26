@@ -1,10 +1,20 @@
-const TableHead = ({}) => {
-	const headName = [{ name: "Name" }, { name: "Category" }, { name: "Price" }, { name: "IN Stock" }, { name: "rate" }];
+const TableHead = ({ raiseSort, columns, columnSort }) => {
 	return (
 		<thead>
 			<tr>
-				{headName.map((hn) => (
-					<th key={hn.name} scope="col">{hn.name}</th>
+				{columns.map((column) => (
+					<th
+						key={column.name}
+						scope="col"
+						onClick={() => raiseSort(column.path)}>
+						{column.name}{" "}
+						{columnSort.path===column.path?  <i
+							className={
+								columnSort.order === "asc"
+									? "fas fa-sort-down"
+									: "fas fa-sort-up"
+							}></i> : null}
+					</th>
 				))}
 			</tr>
 		</thead>

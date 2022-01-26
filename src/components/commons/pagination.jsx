@@ -1,7 +1,7 @@
 const Pagination = ({ currentPage, pageSize, itemCount, onPageChange }) => {
-	const pageNumber = Math.ceil(itemCount / pageSize);
+	const pageNumber = Math.ceil(itemCount / pageSize) ;
 	const pageRange = [...Array(pageNumber).keys()].map((num) => ++num);
-	return (
+	return pageRange.length==1? "":  (
 		<nav>
 			<ul className="pagination">
 				<li className={currentPage === "prev" ? "page-item active" : "page-item "} onClick={() => onPageChange("prev")}>

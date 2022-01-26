@@ -1,7 +1,13 @@
 import _ from "lodash";
 import React from "react";
 
-const ListGroup = ({ clicked, items, itemsDisplay, onFilter, onDisplayFilter }) => {
+const ListGroup = ({
+	clicked,
+	items,
+	itemsDisplay,
+	onFilter,
+	onDisplayFilter,
+}) => {
 	let classes = " badge border p-2 font-weight-light badge-";
 	classes += clicked ? "primary " : "light";
 
@@ -11,7 +17,7 @@ const ListGroup = ({ clicked, items, itemsDisplay, onFilter, onDisplayFilter }) 
 				All protucts
 			</div>
 			<a
-				className="btn btn-secondary dropdown-toggle p-2 ml-2"
+				className="badge badge-secondary dropdown-toggle p-2 ml-2"
 				type="button"
 				id="dropdownMenuButton"
 				data-toggle="dropdown"
