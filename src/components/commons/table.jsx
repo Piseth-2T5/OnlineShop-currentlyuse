@@ -14,11 +14,11 @@ class Table extends Component {
 		this.props.onSort(columnSort);
 	};
 	render() {
-		const { items, columnSort , columns, onDelete, onEdit} = this.props;
+		const { items, columnSort , columns, onDelete, onEdit, filteredItems} = this.props;
 		return (
 			<table className="table table-bordered mt-4">
 				<TableHead raiseSort={this.raiseSort} columns={columns} columnSort={columnSort} />
-				<TableBody items={items} columns={columns} onDelete={onDelete} onEdit={onEdit}/>
+				<TableBody items={items} columns={columns} onDelete={onDelete} onEdit={onEdit} filteredItems={filteredItems}/>
 			</table>
 		);
 	}

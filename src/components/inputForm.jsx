@@ -1,9 +1,9 @@
 const InputForm = ({ label, value, type, name,error, onChange }) => {
 	return (
-		<div className="form-group col-4">
+		<div className="form-group">
 			<label htmlFor={name}>{label}</label>
 			<input
-				className="form-control "
+				className="form-control"
 				onChange={onChange}
 				value={value}
 				type={type}

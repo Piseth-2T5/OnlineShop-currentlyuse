@@ -14,6 +14,7 @@ class ItemsControl extends Component {
 			onFilter,
 			onDelete,
 			onDisplayFilter,
+			raiseSearchQuery,
 		} = this.props;
 		return (
 			<div className="row w-100 m-0">
@@ -39,7 +40,7 @@ class ItemsControl extends Component {
 							itemsDisplay={itemsDisplay}
 						/>
 						<AddButton />
-						<SearchBox />
+						<SearchBox raiseSearchQuery={raiseSearchQuery} clicked={clicked}/>
 
 					</div>
 				</div>

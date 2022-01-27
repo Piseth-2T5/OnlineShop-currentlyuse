@@ -1,15 +1,16 @@
-const SelectForm = ({ label,type,name,options, onChange}) => {
+ const SelectForm = ({ label,type,name,options,error,...rest}) => {
 	return (
 		<div className="form-group col-4">
-			<label>{label}</label>
-			<select className="form-control " type={type} name={name} onChange={onChange}>
-				<option value=""></option>
+			<label htmlFor={name}>{label}</label>
+			<select className="form-control "name={name} {...rest}>
+				<option value=""></option>	
 				{options.map((option) => (
-					<option key={option} value={option}>
-						{option}
+					<option key={option.id} value={option.id}>
+						{option.name}
 					</option>
 				))}
 			</select>
+			{error && <div className="alert alert-danger">{error}</div>}
 		</div>
 	);
 };

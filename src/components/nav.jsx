@@ -7,6 +7,7 @@ class Nav extends React.Component {
 			{ name: "Costumer", route: "/costumers" },
 			{ name: "Transaction", route: "/transactions" },
 			{ name: "Graph", route: "/graph" },
+			{ name: "Register", route: "/register" },
 		];
 		return (
 			<React.Fragment>

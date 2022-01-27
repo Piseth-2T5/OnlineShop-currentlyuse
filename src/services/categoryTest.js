@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
     {id: 1, name: "Grocery"},
     {id: 2, name: "Skin Care"},
     {id: 3, name: "Jewelry"},
@@ -11,5 +11,9 @@ const categories = [
 ]
 
 export function getCategories(){
-    return categories.map(m=> m.name)
+    return categories.map(c=> c)
+}
+
+export function getCategory(id){
+    return categories.find(c => c.id === id)
 }

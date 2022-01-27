@@ -7,19 +7,16 @@ class ProductDatail extends Component {
 	};
 	columns = [
 		{ name: "Name", path: "name" },
-		{ name: "Category", path: "category" },
+		{ name: "Category", path: "category.name" },
 		{ name: "Price", path: "price" },
 		{ name: "IN Stock", path: "inStock" },
 		{ name: "Rate", path: "rate" },
 	];
-	componentDidMount() {
-		this.setState({ product: getProduct(this.props.match.params.id) });
-	}
 	handleRedirect = () => {
 		this.props.history.replace("/products");
 	};
 	render() {
-		const { product } = this.state;
+		const product = getProduct(this.props.match.params.id)
 		return (
 			<div className="jumbotron">
 				<div className="container bg-light p-0">
@@ -33,7 +30,7 @@ class ProductDatail extends Component {
 						<div className="col-4 pr-0">
 							<span className="align-middle">
 								<h5 className="mt-0">{product.name}</h5>
-								<p className="pt-2">Category: {product.category}</p>
+								<p className="pt-2">Category: {product.category.name}</p>
 								<p>Price: {product.price}</p>
 								<p>Quantity: {product.inStock}</p>
 								<p>Rate: {product.rate}</p>
