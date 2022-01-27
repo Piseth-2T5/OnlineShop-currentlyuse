@@ -28,12 +28,20 @@ public class Customer {
 	private String phoneNumber;
 	@Column(name = "email")
 	private String email;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-	private List<SaleProduct> saleProducts = new ArrayList<>();
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-	private List<Order> orders = new ArrayList<>();
+
+
+	public Customer(Long id, String firstName, String lastName, String phoneNumber, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+
+	public Customer() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
@@ -74,26 +82,4 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public List<SaleProduct> getSaleProducts() {
-		return saleProducts;
-	}
-
-	public void setSaleProducts(List<SaleProduct> saleProducts) {
-		this.saleProducts = saleProducts;
-	}
-
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
-	
-	
-	
-	
-	
-	
 }

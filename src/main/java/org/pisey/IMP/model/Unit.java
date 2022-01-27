@@ -11,35 +11,33 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "brand")
-public class Brand {
+@Table(name = "unit")
+public class Unit {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private long brandId;
-	@Column(name = "brand_name")
-	private String brandName;
-	
-	@OneToMany(mappedBy = "brand")
+	private long id;
+	@Column(name = "unit_name")
+	private String unitName;
+
+	@OneToMany(mappedBy = "unit")
 	private List<Product> products;
 
-
-
-	public long getBrandId() {
-		return brandId;
+	public long getId() {
+		return id;
 	}
 
-	public void setBrandId(long brandId) {
-		this.brandId = brandId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getBrandName() {
-		return brandName;
+	public String getUnitName() {
+		return unitName;
 	}
 
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
+	public void setUnitName(String unitName) {
+		this.unitName = unitName;
 	}
 
 }
