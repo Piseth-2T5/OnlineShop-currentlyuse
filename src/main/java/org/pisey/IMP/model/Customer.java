@@ -40,7 +40,6 @@ public class Customer {
 	}
 
 	public Customer() {
-		super();
 	}
 
 	public Long getId() {

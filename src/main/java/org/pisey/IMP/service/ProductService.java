@@ -77,6 +77,13 @@ public class ProductService implements IProductService{
 		Product updatedProduct = productReposity.save(product);
 		return updatedProduct;
 	}
+	@Override
+	public void deleleAllproduct() {
+		List<Product> products = getAllProducts();
+		if(!products.isEmpty()) {
+			productReposity.deleteAll();
+		}
+	}
 
 	
 }

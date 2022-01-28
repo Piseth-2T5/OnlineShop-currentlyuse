@@ -57,5 +57,12 @@ public class ProductController {
 		responce.put("Deleted", Boolean.TRUE);
 		return ResponseEntity.ok(responce);
 	}
-
+	@DeleteMapping
+	public ResponseEntity<Map<String, Boolean>> deleteAll(){
+		productService.deleleAllproduct();
+		Map<String, Boolean> responce = new HashMap<>();
+		responce.put("Deleted All Products In DB", Boolean.TRUE);
+		return ResponseEntity.ok(responce);
+	}
+ 
 }

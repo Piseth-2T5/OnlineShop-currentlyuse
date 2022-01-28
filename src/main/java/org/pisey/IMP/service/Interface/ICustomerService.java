@@ -12,13 +12,13 @@ public interface ICustomerService {
 	
 	String validationCustomerId(long Id);
 	String validationCustomerName(String name,long Id);
-//	long fineProductByOrderId(long orderId);
-//	long fineProductBySaleId(long saleId);
 	List<Customer> getAllCustomers();
 	void deleteCustomerById(long id);
 	Customer addCustomer(Customer customer);
-	Customer updateCustomerByID(long id, Customer customer);
-
+	Customer updateCustomerByID(long id, Customer data);
+	void deleteAllCustomer();
+//	long fineProductByOrderId(long orderId);
+//	long fineProductBySaleId(long saleId);
 	
 	
 	
