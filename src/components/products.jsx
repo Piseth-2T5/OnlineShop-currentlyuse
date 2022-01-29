@@ -26,7 +26,7 @@ class Products extends Component {
     { name: "IN Stock", path: "inStock" },
     { name: "Rate", path: "rate" },
   ];
-  componentDidMount = () => {
+  componentDidMount = async () => {
     const categories = [{ name: "All Categories" }, ...getCategories()];
     this.setState({ products: getProducts(), categories });
   };

@@ -8,7 +8,7 @@ import {
 } from "../services/productsTest";
 class ProductForm extends Form {
   state = {
-    data: { product:"", categoryId:"", price: "", inStock: "", rate: "" },
+    data: { product: "", categoryId: "", price: "", inStock: "", rate: "" },
     categories: [],
     errors: {},
   };
@@ -33,7 +33,7 @@ class ProductForm extends Form {
       categoryId: product.category.id,
       price: product.price,
       inStock: product.inStock,
-      rate: product.rate
+      rate: product.rate,
     };
   }
   doSubmit() {
@@ -53,16 +53,28 @@ class ProductForm extends Form {
         <h1 className="text-center">Add Product</h1>
         <form action="" className="mt-4" onSubmit={this.hanldeSubmit}>
           <div className="row justify-content-center">
-            {this.renderInput("product", "Product Name")}
-            {this.renderInput("price", "Product Price $")}
+            <div className="col-4">
+              {this.renderInput("product", "Product Name")}
+            </div>
+            <div className="col-4">
+              {this.renderInput("price", "Product Price $")}
+            </div>
           </div>
           <div className="row justify-content-center">
-            {this.renderInput("inStock", "Quantity")}
-            {this.renderSelect(this.state.categories, "Categories", "categoryId")}
+            <div className="col-4">
+              {this.renderInput("inStock", "Quantity")}
+            </div>
+            {this.renderSelect(
+              this.state.categories,
+              "Categories",
+              "categoryId"
+            )}
           </div>
           <div className="row justify-content-center">
             <div className="col-8 p-0">
-              {this.renderInput("rate", "Product's Rate")}
+              <div className="col-6">
+                {this.renderInput("rate", "Product's Rate")}
+              </div>
             </div>
           </div>
           <div className="row justify-content-center">
