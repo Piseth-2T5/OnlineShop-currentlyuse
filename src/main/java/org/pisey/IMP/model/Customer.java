@@ -3,6 +3,7 @@ package org.pisey.IMP.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "customer")
@@ -26,9 +28,15 @@ public class Customer {
 	private String lastName;
 	@Column(name = "phone_number")
 	private String phoneNumber;
+	@Email
 	@Column(name = "email")
 	private String email;
-
+	
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="customer")
+	public List<SaleProduct> saleProducts = new ArrayList<>();
+	
+	
 
 	public Customer(Long id, String firstName, String lastName, String phoneNumber, String email) {
 		super();

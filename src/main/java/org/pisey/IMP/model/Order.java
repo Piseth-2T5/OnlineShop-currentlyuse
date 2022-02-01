@@ -1,6 +1,7 @@
 package org.pisey.IMP.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,14 @@ public class Order {
 	private BigDecimal totalPrice;
 
 	// Sale, Product Mapping
+
+	@OneToMany(mappedBy="order")
+	public List<Product> products;
+	
+	@ManyToOne
+	@JoinColumn(name="sale_id")
+	private SaleProduct saleProduct;
+	
 
 
 //	// Relation Ship with the product. 

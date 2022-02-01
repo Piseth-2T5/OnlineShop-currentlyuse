@@ -34,8 +34,8 @@ public class CustomerService implements ICustomerService{
 	}
 	
 	@Override
-	public Customer addCustomer(Customer customer) {
-		return repository.save(customer);
+	public Customer addCustomer(Customer data) {
+		return repository.save(data);
 	}
 
 	@Override

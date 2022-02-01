@@ -31,14 +31,17 @@ public class Product {
 	@Column(name = "product_name")
 	private String productName;
 	@Column(name = "price")
-	private BigDecimal price;
+	private Double price;
 	@Column(name = "cost")
-	private BigDecimal cost;
+	private Double cost;
 	@Column(name = "instock")
 	private int inStock;
 
 	/// Order Mapping
-
+	@ManyToOne
+	@JoinColumn(name="order_id")
+	private Order order;
+	
 	// Many to one between of product and category
 	@ManyToOne
 	@JoinColumn(name = "category_id")
@@ -58,7 +61,7 @@ public class Product {
 	}
 
 	// Relation between Product and unit of product one to one
-	public Product(long productID, String productName, BigDecimal price, BigDecimal cost, int inStock) {
+	public Product(long productID, String productName, Double price, Double cost, int inStock) {
 		super();
 		this.productID = productID;
 		this.productName = productName;
@@ -83,19 +86,19 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public BigDecimal getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
-	public BigDecimal getCost() {
+	public Double getCost() {
 		return cost;
 	}
 
-	public void setCost(BigDecimal cost) {
+	public void setCost(Double cost) {
 		this.cost = cost;
 	}
 
@@ -131,6 +134,6 @@ public class Product {
 		this.unit = unit;
 	}
 
-	// Constructor and getter and setter.
+	
 
 }
